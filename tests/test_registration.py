@@ -6,7 +6,7 @@ from data import *
 
 class TestRegistration:
 
-    @pytest.mark.usefixtures("register_new_account")
+
     def test_successful_registration(self, register_new_account):
         """Тест успешной регистрации с валидными данными"""
         driver, name, email, password = register_new_account

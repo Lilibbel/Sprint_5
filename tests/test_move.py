@@ -1,10 +1,7 @@
-from time import sleep
 import pytest
-from conftest import driver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import *
-from data import *
 
 class TestMovePersonalAccount:
     def test_personal_account_redirect(self,driver):
@@ -23,7 +20,7 @@ class TestMovePersonalAccount:
         assert driver.find_element(*LoginPageLocators.login_button).is_displayed()
 
 
-    @pytest.mark.usefixtures("start_from_main_page")
+
     def test_personal_account_redirect_to_personal_account(self,start_from_main_page):
         driver = start_from_main_page
 
@@ -39,7 +36,7 @@ class TestMoveConstructor:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
 
-    @pytest.mark.usefixtures("start_from_main_page")
+
     def test_navigation_via_constructor_personal_account(self,start_from_main_page):
         driver = start_from_main_page
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(MainPageLocators.personal_account_button)).click()
@@ -57,7 +54,7 @@ class TestMoveLogo:
         WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
 
-    @pytest.mark.usefixtures("start_from_main_page")
+
     def test_navigation_via_logo_personal_account(self, start_from_main_page):
         driver = start_from_main_page
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable(MainPageLocators.personal_account_button)).click()

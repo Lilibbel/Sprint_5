@@ -1,13 +1,9 @@
-from time import sleep
 import pytest
-from conftest import driver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import *
-from data import *
 
 class TestLogout:
-    @pytest.mark.usefixtures("start_from_main_page")
     def test_personal_account_logout(self, start_from_main_page):
         driver = start_from_main_page
 
